@@ -1,9 +1,10 @@
 from elasticsearch import Elasticsearch
 
-from archivos_json import *
+from ..archivos_json import doc_json
 
-from metodos_borrar import * 
+from ..metodos_borrar import borrar_datos_elasticsearch
 
+db = borrar_datos_elasticsearch
 es = Elasticsearch()
 
 
@@ -41,7 +42,7 @@ for hit in res['hits']['hits']:
 
 # con esto borramos los ID a pedido
 #to_int_id_es = int(id_es)
-#bd.delete_id_datos_es(to_int_id_es)
+#db.delete_id_datos_es(to_int_id_es)
 
 # con esto borramos todos los id creados masivo
-bd.delete_all_datos_es()
+db.delete_all_datos_es()
