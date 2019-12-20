@@ -2,12 +2,9 @@ from elasticsearch import Elasticsearch
 
 from ..archivos_json import doc_json
 
-from ..metodos_borrar import borrar_datos_elasticsearch
-
-db = borrar_datos_elasticsearch
 es = Elasticsearch()
 
-
+print("paso por metodo crear")
 #res = es.index(index="test-index",doc_type='tweet',id=1,body=doc_json.doc0)
 #print(res['result'])
 #res = es.index(index="test-index",doc_type='tweet',id=2,body=doc_json.doc1)
@@ -32,17 +29,9 @@ es = Elasticsearch()
 #es.indices.refresh(index="test-index")
 
 # con esto consultamos datos especificos
-v_autor = "cuadrado"
-res = es.search(index="test-index", body={"query": {"bool":{ "must": [{ "match": { "autor": v_autor}}]}}})
-print("Got %d Hits:" % res['hits']['total']['value'])
-for hit in res['hits']['hits']:
-    print("%(timestamp)s %(autor)s: %(text)s" % hit["_source"],hit["_id"])
-    id_es = hit["_id"]
-
-
-# con esto borramos los ID a pedido
-#to_int_id_es = int(id_es)
-#db.delete_id_datos_es(to_int_id_es)
-
-# con esto borramos todos los id creados masivo
-db.delete_all_datos_es()
+#v_autor = "cuadrado"
+#res = es.search(index="test-index", body={"query": {"bool":{ "must": [{ "match": { "autor": v_autor}}]}}})
+#print("Got %d Hits:" % res['hits']['total']['value'])
+#for hit in res['hits']['hits']:
+#    print("%(timestamp)s %(autor)s: %(text)s" % hit["_source"],hit["_id"])
+#    id_es = hit["_id"]
