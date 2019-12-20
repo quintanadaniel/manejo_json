@@ -1,9 +1,9 @@
 from elasticsearch import Elasticsearch
 
-from .metodos_borrar import borrar_datos_elasticsearch
-from .metodos_crear import genera_index
-from .metodos_consultar import query_elastic
-from .metodos_actualizar import update_json
+from .src.metodos_borrar import borrar_datos_elasticsearch
+from .src.metodos_crear import genera_index
+from .src.metodos_consultar import query_elastic
+from .src.metodos_actualizar import update_json
 
 es = Elasticsearch()
 

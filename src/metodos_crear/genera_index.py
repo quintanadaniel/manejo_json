@@ -1,6 +1,6 @@
 from elasticsearch import Elasticsearch
 
-from ..archivos_json import doc_json
+from archivos_json import doc_json
 
 es = Elasticsearch()
 
