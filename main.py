@@ -1,13 +1,13 @@
 from elasticsearch import Elasticsearch
 
-from .src.metodos_borrar import borrar_datos_elasticsearch
-from .src.metodos_crear import genera_index
-from .src.metodos_consultar import query_elastic
-from .src.metodos_actualizar import update_json
+from src.metodos_borrar.borrar_datos_elasticsearch import delete_all_datos_es, delete_id_datos_es
+from src.metodos_crear import genera_index
+from src.metodos_consultar import query_elastic
+from src.metodos_actualizar import update_json
 
 es = Elasticsearch()
 
-delete_datos = borrar_datos_elasticsearch
+delete_datos = delete_id_datos_es
 create_datos = genera_index
 consult_datos = query_elastic
 update_datos = update_json
