@@ -8,10 +8,10 @@ from .src.metodos_actualizar import update_json
 
 es = Elasticsearch()
 
-delete_datos = borrar_datos_elasticsearch
+#delete_datos = borrar_datos_elasticsearch()
 create_datos = genera_index
-consult_datos = query_elastic
-update_datos = update_json
+#consult_datos = query_elastic
+#update_datos = update_json
 
 print("---------------------------------------------------------------------------------------------------------------")
 print("---------------- MENU DE OPCIONES PARA CREAR O BORRAR JSON DE ELASTICSEARCH -----------------------------------")
@@ -27,7 +27,7 @@ print("-------------------------------------------------------------------------
 num_opcion = int(input("Ingrese la opcion: "))
 
 if num_opcion == 1:
-    pass
+    create_datos.crear_indices()
 elif num_opcion == 2:
     str_opcion = str(input("Ingrese el tipo de borrado: "))
     if str_opcion == "a":
@@ -39,7 +39,4 @@ elif num_opcion == 2:
 elif num_opcion == 3:
     pass
 elif num_opcion == 4:
-    pass
-
-if __name__ == "__main__":
     pass
